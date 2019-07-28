@@ -90,6 +90,12 @@
     <Compile Include="Modulos\ModuloFuncionario.Designer.cs">
       <DependentUpon>ModuloFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrestamoDevolucion\Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrestamoDevolucion\Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GestionEquipos\Equipos.resx">
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\ModuloAdmin.resx">
       <DependentUpon>ModuloAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrestamoDevolucion\Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

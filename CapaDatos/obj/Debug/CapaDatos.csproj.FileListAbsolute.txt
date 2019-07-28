@@ -9,3 +9,14 @@ D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1\CapaDatos\bin\Debug\G
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1\CapaDatos\bin\Debug\BouncyCastle.Crypto.dll
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1\CapaDatos\bin\Debug\MySql.Data.xml
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\CapaDatos.dll
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\MySql.Data.dll
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\Google.Protobuf.dll
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\BouncyCastle.Crypto.dll
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\bin\Debug\MySql.Data.xml
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\obj\Debug\CapaDatos.csprojAssemblyReference.cache
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\obj\Debug\CapaDatos.dll
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\CapaDatos\obj\Debug\CapaDatos.pdb

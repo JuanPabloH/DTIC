@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.GestionUsuarios;
 using CapaPresentacion.GestionSalas;
 using CapaPresentacion.GestionEquipos;
+using CapaPresentacion.PrestamoDevolucion;
 
 namespace WindowsFormsApp1
 {
@@ -42,6 +43,12 @@ namespace WindowsFormsApp1
         {
             Equipos equipos = new Equipos();
             equipos.Show();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Prestamos prestamos = new Prestamos();
+            prestamos.Show();
         }
     }
 }

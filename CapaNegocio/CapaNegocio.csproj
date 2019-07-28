@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CN_Equipo.cs" />
     <Compile Include="CN_Login.cs" />
+    <Compile Include="CN_PrestamoDev.cs" />
     <Compile Include="CN_Salas.cs" />
     <Compile Include="CN_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
