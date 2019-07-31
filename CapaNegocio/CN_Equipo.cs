@@ -52,5 +52,12 @@ namespace CapaNegocio
 
             return sala;
         }
+        public DataTable equipo(String nombreEquipo,String nombreSala)
+        {
+            DataTable equipo = new DataTable();
+            equipo = OB_Equipo.Equipo(nombreEquipo, nombreSala);
+
+            return equipo;
+        }
     }
 }

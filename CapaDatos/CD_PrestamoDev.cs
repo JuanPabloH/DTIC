@@ -54,7 +54,7 @@ namespace CapaDatos
             MySqlDataReader leer;
             DataTable prestamos = new DataTable();
             comando.Connection = conexion.abrirConexion();
-            comando.CommandText = "SELECT us.NOMBRE, us.APELLIDO, sa.NOMBRE from prestamodevolucion pd inner join usuario us on pd.IDUSUARIO=us.IDUSUARIO inner join equipocomputo eq on pd.CODIGO_EQUIPO=eq.CODIGO_EQUIPO inner join salainformatica sa on sa.IDSALAINFORMATICA=eq.IDSALAINFORMATICA where pd.ESTADO='PRESTAMO'";
+            comando.CommandText = "SELECT us.NOMBRE, us.APELLIDO, sa.NOMBRE as SALA, pd.HORAPRESTAMO as ENTRADA from prestamodevolucion pd inner join usuario us on pd.IDUSUARIO=us.IDUSUARIO inner join equipocomputo eq on pd.CODIGO_EQUIPO=eq.CODIGO_EQUIPO inner join salainformatica sa on sa.IDSALAINFORMATICA=eq.IDSALAINFORMATICA where pd.ESTADO='PRESTAMO'";
             leer = comando.ExecuteReader();
             prestamos.Load(leer);
             return prestamos;
@@ -62,10 +62,10 @@ namespace CapaDatos
 
         }
 
-        public void insertarEquipo(String descripcion, int idSalaInformatica)
+        public void insertarPrestamo(int idUser, int idEquipo, String horaIngreso)
         {
             comando.Connection = conexion.abrirConexion();
-            comando.CommandText = "INSERT INTO equipocomputo (descripcion,idsalainformatica) VALUES('" + descripcion + "'," + idSalaInformatica + ")";
+            comando.CommandText = "INSERT INTO prestamodevolucion (IDUSUARIO, CODIGO_EQUIPO, HORAPRESTAMO, ESTADO) VALUES ("+idUser+","+idEquipo+" , '"+horaIngreso+"', 'PRESTAMO');";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Connection = conexion.cerrarConexion();

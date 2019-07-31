@@ -31,6 +31,12 @@ namespace CapaNegocio
             user = usuarios.ConsultaUsuarioCod(Convert.ToInt32(codigo));
             return user;
         }
+        public DataTable ConsultarUsuarioCodPres(String codigo)
+        {
+            DataTable user = new DataTable();
+            user = usuarios.ConsultaUsuarioCodPrest(Convert.ToInt32(codigo));
+            return user;
+        }
 
         public DataTable ConsultarUsuarioCorreo(String correo)
         {

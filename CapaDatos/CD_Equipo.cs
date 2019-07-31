@@ -67,6 +67,18 @@ namespace CapaDatos
 
 
         }
+        public DataTable Equipo(String nombreEquipo, String nombreSala)
+        {
+            MySqlDataReader leer;
+            DataTable usuario = new DataTable();
+            comando.Connection = conexion.abrirConexion();
+            comando.CommandText = "SELECT * from equipocomputo eq inner join salainformatica sa on eq.idsalainformatica=sa.idsalainformatica   where eq.descripcion= '" + nombreEquipo + "' and sa.nombre='"+nombreSala+"'";
+            leer = comando.ExecuteReader();
+            usuario.Load(leer);
+            return usuario;
+
+
+        }
 
 
         public void Editar(String descripcion, int idEquipo,int idSala)

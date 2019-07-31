@@ -28,10 +28,12 @@ namespace CapaPresentacion.PrestamoDevolucion
             DataTable prestamos = new DataTable();
             prestamos = prestamoDev.prestamosActivos();
             dataGridView1.DataSource = prestamos;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             List<string> salasList = new List<string>();
             salasList = prestamoDev.listaSalas();
             comboBoxSalas.DataSource = salasList;
             comboBoxSalas.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void comboBoxSalas_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +63,34 @@ namespace CapaPresentacion.PrestamoDevolucion
             String nombreSala = comboBoxSalas.Text;
             String nombreEquipo = comboBoxEquipos.Text;
             String codigo = textBoxCodigo.Text;
+            if (nombreEquipo=="")
+            {
+                MessageBox.Show("No existen equipos disponibles para la sala seleccionada");
+            }
+            else
+            {
+                CN_Usuario ob_user = new CN_Usuario();
+                DataTable user = ob_user.ConsultarUsuarioCodPres(codigo);
+                if (user.Rows.Count > 0)
+                {
+                    CN_Equipo cN_Equipo = new CN_Equipo();
+                    DataTable equipo = new DataTable();
+                    equipo = cN_Equipo.equipo(nombreEquipo, nombreSala);
+                    String idUser = user.Rows[0]["idusuario"].ToString();
+                    String codEquipo = equipo.Rows[0]["codigo_equipo"].ToString();
+                    CN_PrestamoDev prestamo = new CN_PrestamoDev();
+
+                    prestamo.prestamo(idUser, codEquipo);
+                    MessageBox.Show("Prestamo exitoso");
+                    llenarTabla();
+                }
+                else
+                {
+                    MessageBox.Show("Error al realizar el prestamo, por favor verifique que el código del usuario sea el correcto o que no tenga un prestamo activo");
+                }
+            }
+
+            
         }
     }
 }

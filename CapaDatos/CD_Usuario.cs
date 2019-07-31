@@ -50,6 +50,21 @@ namespace CapaDatos
 
 
         }
+
+        public DataTable ConsultaUsuarioCodPrest(int codigo)
+        {
+            MySqlDataReader leer;
+            DataTable usuario = new DataTable();
+            comando.Connection = conexion.abrirConexion();
+            comando.CommandText = "select * from usuario us WHERE us.codigo = "+codigo+" AND NOT EXISTS(SELECT * FROM prestamodevolucion pd WHERE us.idusuario = pd.idusuario and pd.estado = 'PRESTAMO')";
+            leer = comando.ExecuteReader();
+            usuario.Load(leer);
+            return usuario;
+
+
+        }
+
+
         public DataTable ConsultaUsuarioCorreo(String correo)
         {
             MySqlDataReader leer;

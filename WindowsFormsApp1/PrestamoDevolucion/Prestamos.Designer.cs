@@ -33,16 +33,16 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxNameSearch = new System.Windows.Forms.TextBox();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxEquipos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.comboBoxSalas = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonDevolver = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBoxEquipos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.panelForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -98,10 +98,47 @@
             this.panelForm.Controls.Add(this.comboBoxSalas);
             this.panelForm.Controls.Add(this.label1);
             this.panelForm.Controls.Add(this.btnAdd);
-            this.panelForm.Location = new System.Drawing.Point(416, 38);
+            this.panelForm.Location = new System.Drawing.Point(457, 38);
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(274, 225);
             this.panelForm.TabIndex = 51;
+            // 
+            // textBoxCodigo
+            // 
+            this.textBoxCodigo.Location = new System.Drawing.Point(100, 121);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(136, 20);
+            this.textBoxCodigo.TabIndex = 57;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 40);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "Codigo\r\ndel estudiante: ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxEquipos
+            // 
+            this.comboBoxEquipos.FormattingEnabled = true;
+            this.comboBoxEquipos.Location = new System.Drawing.Point(100, 59);
+            this.comboBoxEquipos.Name = "comboBoxEquipos";
+            this.comboBoxEquipos.Size = new System.Drawing.Size(136, 21);
+            this.comboBoxEquipos.TabIndex = 51;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "Equipos:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBoxSalas
             // 
@@ -165,52 +202,15 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(21, 38);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(358, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(399, 246);
             this.dataGridView1.TabIndex = 48;
-            // 
-            // comboBoxEquipos
-            // 
-            this.comboBoxEquipos.FormattingEnabled = true;
-            this.comboBoxEquipos.Location = new System.Drawing.Point(100, 59);
-            this.comboBoxEquipos.Name = "comboBoxEquipos";
-            this.comboBoxEquipos.Size = new System.Drawing.Size(136, 21);
-            this.comboBoxEquipos.TabIndex = 51;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Equipos:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 40);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Codigo\r\ndel estudiante: ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxCodigo
-            // 
-            this.textBoxCodigo.Location = new System.Drawing.Point(100, 121);
-            this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(136, 20);
-            this.textBoxCodigo.TabIndex = 57;
             // 
             // Prestamos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(711, 363);
+            this.ClientSize = new System.Drawing.Size(746, 363);
             this.Controls.Add(this.buttonRefreshT);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonSearch);

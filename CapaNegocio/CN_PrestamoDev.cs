@@ -33,6 +33,12 @@ namespace CapaNegocio
             prestamos = OB_PresDev.PrestamosActivos();
             return prestamos;
         }
+        public void prestamo(String idUser,String idEquipo)
+        {
+            DateTime horaIngreso = DateTime.Now;
+            String hora=horaIngreso.ToString("yyyy-MM-dd H:mm:ss");
+            OB_PresDev.insertarPrestamo(Convert.ToInt32(idUser),Convert.ToInt32(idEquipo),hora);
+        }
 
 
 
