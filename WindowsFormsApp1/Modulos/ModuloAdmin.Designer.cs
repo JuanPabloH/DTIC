@@ -152,9 +152,9 @@
             this.label6.Font = new System.Drawing.Font("Stencil", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(374, 184);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 26);
+            this.label6.Size = new System.Drawing.Size(79, 26);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Reportes\r\nEstadísticos";
+            this.label6.Text = "Reportes\r\nde Actividad";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox5
@@ -166,6 +166,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // ModuloAdmin
             // 

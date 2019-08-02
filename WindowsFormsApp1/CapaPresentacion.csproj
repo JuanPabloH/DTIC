@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\ReporteActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteActividad.Designer.cs">
+      <DependentUpon>ReporteActividad.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GestionEquipos\Equipos.resx">
       <DependentUpon>Equipos.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +119,12 @@
     <EmbeddedResource Include="Modulos\ModuloAdmin.resx">
       <DependentUpon>ModuloAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ModuloBecario.resx">
+      <DependentUpon>ModuloBecario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\ModuloFuncionario.resx">
+      <DependentUpon>ModuloFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrestamoDevolucion\Prestamos.resx">
       <DependentUpon>Prestamos.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +138,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\ReporteActividad.resx">
+      <DependentUpon>ReporteActividad.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

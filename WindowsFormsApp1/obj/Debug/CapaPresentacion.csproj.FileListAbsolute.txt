@@ -68,3 +68,6 @@ D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsF
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\CapaPresentacion.exe
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\CapaPresentacion.pdb
 D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\CapaPresentacion.PrestamoDevolucion.Prestamos.resources
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ModuloBecario.resources
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ModuloFuncionario.resources
+D:\Gerencia Informatica\Proyecto\Software\Codigo\Solution1 - copia\DTIC\WindowsFormsApp1\obj\Debug\CapaPresentacion.ReporteActividad.resources

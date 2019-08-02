@@ -45,6 +45,7 @@
     <Compile Include="CD_Equipo.cs" />
     <Compile Include="CD_Login.cs" />
     <Compile Include="CD_PrestamoDev.cs" />
+    <Compile Include="CD_ReporteActividad.cs" />
     <Compile Include="CD_Salas.cs" />
     <Compile Include="CD_Usuario.cs" />
     <Compile Include="ConSQL.cs" />

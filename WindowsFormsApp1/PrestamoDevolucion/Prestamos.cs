@@ -22,19 +22,7 @@ namespace CapaPresentacion.PrestamoDevolucion
         {
             llenarTabla();
         }
-        private void llenarTabla()
-        {
-            CN_PrestamoDev prestamoDev = new CN_PrestamoDev();
-            DataTable prestamos = new DataTable();
-            prestamos = prestamoDev.prestamosActivos();
-            dataGridView1.DataSource = prestamos;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            List<string> salasList = new List<string>();
-            salasList = prestamoDev.listaSalas();
-            comboBoxSalas.DataSource = salasList;
-            comboBoxSalas.DropDownStyle = ComboBoxStyle.DropDownList;
-
-        }
+        
 
         private void comboBoxSalas_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,18 +33,10 @@ namespace CapaPresentacion.PrestamoDevolucion
             equiposList = prestamoDev.listaEquipos(idSalainf);
             comboBoxEquipos.DataSource = equiposList;
             comboBoxEquipos.DropDownStyle = ComboBoxStyle.DropDownList;
-            MessageBox.Show("idSala"+idSalainf);
+            
         }
 
-        private String idSala(String nombreSala)
-        {
-            CN_Equipo equipo = new CN_Equipo();
-            DataTable equipos = new DataTable();
-            equipos = equipo.sala(nombreSala);
-            DataRow fila = equipos.Rows[0];
-            String idSala = fila["idSalaInformatica"].ToString();
-            return idSala;
-        }
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -92,5 +72,86 @@ namespace CapaPresentacion.PrestamoDevolucion
 
             
         }
+
+        private void buttonDevolver_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                String codigoEquipoDev=  dataGridView1.CurrentRow.Cells["codigo_equipo"].Value.ToString();
+                String idUserDev=  dataGridView1.CurrentRow.Cells["idusuario"].Value.ToString();
+                CN_PrestamoDev prestamoDev = new CN_PrestamoDev();
+                prestamoDev.Editar(idUserDev, codigoEquipoDev);
+                llenarTabla();
+                MessageBox.Show("Equipo devuelto correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccione un prestamo de la lista");
+            }
+        }
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            CN_PrestamoDev prestamoDev = new CN_PrestamoDev();
+            DataTable prestamos = new DataTable();
+            String codUser=textBoxCodUserF.Text;
+            if (codUser!="")
+            {
+                prestamos = prestamoDev.prestamosUser(codUser);
+                if (prestamos.Rows.Count>0)
+                {
+                    dataGridView1.DataSource = prestamos;
+                    dataGridView1.Columns[0].Visible = false;
+                    dataGridView1.Columns[1].Visible = false;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    List<string> salasList = new List<string>();
+                    salasList = prestamoDev.listaSalas();
+                    comboBoxSalas.DataSource = salasList;
+                    comboBoxSalas.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                }
+                else
+                {
+                    MessageBox.Show("El usuario ingresado no cuenta con prestamos activos");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un codigo valido");
+            }
+            
+        }
+
+        private void llenarTabla()
+        {
+            CN_PrestamoDev prestamoDev = new CN_PrestamoDev();
+            DataTable prestamos = new DataTable();
+            prestamos = prestamoDev.prestamosActivos();
+            dataGridView1.DataSource = prestamos;
+            dataGridView1.Columns[0].Visible=false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            List<string> salasList = new List<string>();
+            salasList = prestamoDev.listaSalas();
+            comboBoxSalas.DataSource = salasList;
+            comboBoxSalas.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
+        private String idSala(String nombreSala)
+        {
+            CN_Equipo equipo = new CN_Equipo();
+            DataTable equipos = new DataTable();
+            equipos = equipo.sala(nombreSala);
+            DataRow fila = equipos.Rows[0];
+            String idSala = fila["idSalaInformatica"].ToString();
+            return idSala;
+        }
+
+        private void buttonRefreshT_Click(object sender, EventArgs e)
+        {
+            llenarTabla();
+        }
+
+        
     }
 }

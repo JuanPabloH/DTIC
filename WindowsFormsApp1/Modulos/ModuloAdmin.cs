@@ -50,5 +50,11 @@ namespace WindowsFormsApp1
             Prestamos prestamos = new Prestamos();
             prestamos.Show();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            CapaPresentacion.ReporteActividad reporteActividad = new CapaPresentacion.ReporteActividad();
+            reporteActividad.Show();
+        }
     }
 }

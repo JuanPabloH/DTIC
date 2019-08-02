@@ -54,7 +54,19 @@ namespace CapaDatos
             MySqlDataReader leer;
             DataTable prestamos = new DataTable();
             comando.Connection = conexion.abrirConexion();
-            comando.CommandText = "SELECT us.NOMBRE, us.APELLIDO, sa.NOMBRE as SALA, pd.HORAPRESTAMO as ENTRADA from prestamodevolucion pd inner join usuario us on pd.IDUSUARIO=us.IDUSUARIO inner join equipocomputo eq on pd.CODIGO_EQUIPO=eq.CODIGO_EQUIPO inner join salainformatica sa on sa.IDSALAINFORMATICA=eq.IDSALAINFORMATICA where pd.ESTADO='PRESTAMO'";
+            comando.CommandText = "SELECT pd.codigo_equipo,pd.idusuario, us.NOMBRE, us.APELLIDO, sa.NOMBRE as SALA, pd.HORAPRESTAMO as ENTRADA from prestamodevolucion pd inner join usuario us on pd.IDUSUARIO=us.IDUSUARIO inner join equipocomputo eq on pd.CODIGO_EQUIPO=eq.CODIGO_EQUIPO inner join salainformatica sa on sa.IDSALAINFORMATICA=eq.IDSALAINFORMATICA where pd.ESTADO='PRESTAMO'";
+            leer = comando.ExecuteReader();
+            prestamos.Load(leer);
+            return prestamos;
+
+
+        }
+        public DataTable usuarioPrestamo(int codigoUser)
+        {
+            MySqlDataReader leer;
+            DataTable prestamos = new DataTable();
+            comando.Connection = conexion.abrirConexion();
+            comando.CommandText = "SELECT pd.codigo_equipo,pd.idusuario, us.NOMBRE, us.APELLIDO, sa.NOMBRE as SALA, pd.HORAPRESTAMO as ENTRADA from prestamodevolucion pd inner join usuario us on pd.IDUSUARIO=us.IDUSUARIO inner join equipocomputo eq on pd.CODIGO_EQUIPO=eq.CODIGO_EQUIPO inner join salainformatica sa on sa.IDSALAINFORMATICA=eq.IDSALAINFORMATICA where pd.ESTADO='PRESTAMO' and us.codigo= '"+codigoUser+"' ";
             leer = comando.ExecuteReader();
             prestamos.Load(leer);
             return prestamos;
@@ -77,10 +89,10 @@ namespace CapaDatos
         
 
 
-        public void Editar(String descripcion, int idEquipo, int idSala)
+        public void Editar(String horaDev, int idUser, int codigoEquipo)
         {
             comando.Connection = conexion.abrirConexion();
-            comando.CommandText = "UPDATE equipocomputo SET descripcion='" + descripcion + "', idsalainformatica=" + idSala + " where codigo_equipo= " + idEquipo + "";
+            comando.CommandText = "UPDATE prestamodevolucion SET HORADEVOLUCION='" + horaDev + "', estado='DEVUELTO' where codigo_equipo= " + codigoEquipo + " and idusuario="+idUser+" and estado='PRESTAMO'";
             comando.CommandType = CommandType.Text;
             comando.ExecuteNonQuery();
             comando.Connection = conexion.cerrarConexion();

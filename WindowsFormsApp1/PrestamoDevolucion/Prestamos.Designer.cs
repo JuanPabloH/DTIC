@@ -31,7 +31,7 @@
             this.buttonRefreshT = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
-            this.textBoxNameSearch = new System.Windows.Forms.TextBox();
+            this.textBoxCodUserF = new System.Windows.Forms.TextBox();
             this.panelForm = new System.Windows.Forms.Panel();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.buttonRefreshT.TabIndex = 56;
             this.buttonRefreshT.Text = "Acualizar tabla";
             this.buttonRefreshT.UseVisualStyleBackColor = false;
+            this.buttonRefreshT.Click += new System.EventHandler(this.buttonRefreshT_Click);
             // 
             // label10
             // 
@@ -65,9 +66,9 @@
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(26, 1);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 20);
+            this.label10.Size = new System.Drawing.Size(122, 20);
             this.label10.TabIndex = 55;
-            this.label10.Text = "Nombre de sala";
+            this.label10.Text = "Código estudiante:";
             // 
             // buttonSearch
             // 
@@ -80,13 +81,14 @@
             this.buttonSearch.TabIndex = 54;
             this.buttonSearch.Text = "Buscar";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
-            // textBoxNameSearch
+            // textBoxCodUserF
             // 
-            this.textBoxNameSearch.Location = new System.Drawing.Point(149, 2);
-            this.textBoxNameSearch.Name = "textBoxNameSearch";
-            this.textBoxNameSearch.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNameSearch.TabIndex = 53;
+            this.textBoxCodUserF.Location = new System.Drawing.Point(149, 2);
+            this.textBoxCodUserF.Name = "textBoxCodUserF";
+            this.textBoxCodUserF.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCodUserF.TabIndex = 53;
             // 
             // panelForm
             // 
@@ -196,6 +198,7 @@
             this.buttonDevolver.TabIndex = 49;
             this.buttonDevolver.Text = "Devolución";
             this.buttonDevolver.UseVisualStyleBackColor = false;
+            this.buttonDevolver.Click += new System.EventHandler(this.buttonDevolver_Click);
             // 
             // dataGridView1
             // 
@@ -214,7 +217,7 @@
             this.Controls.Add(this.buttonRefreshT);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.textBoxNameSearch);
+            this.Controls.Add(this.textBoxCodUserF);
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonDevolver);
@@ -235,7 +238,7 @@
         private System.Windows.Forms.Button buttonRefreshT;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.TextBox textBoxNameSearch;
+        private System.Windows.Forms.TextBox textBoxCodUserF;
         private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.ComboBox comboBoxSalas;
         private System.Windows.Forms.Label label1;

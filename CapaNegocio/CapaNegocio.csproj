@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CN_Reporte.cs" />
     <Compile Include="CN_Equipo.cs" />
     <Compile Include="CN_Login.cs" />
     <Compile Include="CN_PrestamoDev.cs" />

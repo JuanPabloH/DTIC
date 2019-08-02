@@ -33,11 +33,26 @@ namespace CapaNegocio
             prestamos = OB_PresDev.PrestamosActivos();
             return prestamos;
         }
+
+        public DataTable prestamosUser(String codigoUser)
+        {
+            DataTable prestamos = new DataTable();
+            prestamos = OB_PresDev.usuarioPrestamo(Convert.ToInt32(codigoUser));
+            return prestamos;
+        }
+
         public void prestamo(String idUser,String idEquipo)
         {
             DateTime horaIngreso = DateTime.Now;
             String hora=horaIngreso.ToString("yyyy-MM-dd H:mm:ss");
             OB_PresDev.insertarPrestamo(Convert.ToInt32(idUser),Convert.ToInt32(idEquipo),hora);
+        }
+
+        public void Editar(String idUser,String codigo_equipo)
+        {
+            DateTime horaSalida = DateTime.Now;
+            String hora = horaSalida.ToString("yyyy-MM-dd H:mm:ss");
+            OB_PresDev.Editar(hora, Convert.ToInt32(idUser), Convert.ToInt32(codigo_equipo));
         }
 
 
