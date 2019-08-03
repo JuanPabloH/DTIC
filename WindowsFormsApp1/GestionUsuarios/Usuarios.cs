@@ -242,7 +242,7 @@ namespace WindowsFormsApp1.GestionUsuarios
             usuario = cnUser.ConsultarUsuarioCod(codigo);
             if (usuario.Rows.Count == 0)
             {
-                if (cnUser.ConsultarUsuarioCorreo(correo).Rows.Count==0)
+                if (tipoUser=="4")
                 {
                     cnUser.Insertar(codigo, nombre, apellido, correo, contraseña, pregSEg, resPreg, telefono, tipoUser);
                     MessageBox.Show("Usuario Registrado correctamente");
@@ -251,8 +251,19 @@ namespace WindowsFormsApp1.GestionUsuarios
                 }
                 else
                 {
-                    MessageBox.Show("El correo que intenta ingresar ya se encuentra registrado");
+                    if (cnUser.ConsultarUsuarioCorreo(correo).Rows.Count == 0)
+                    {
+                        cnUser.Insertar(codigo, nombre, apellido, correo, contraseña, pregSEg, resPreg, telefono, tipoUser);
+                        MessageBox.Show("Usuario Registrado correctamente");
+                        limpiarCampos();
+                        CargarUsuarios();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El correo que intenta ingresar ya se encuentra registrado");
+                    }
                 }
+                
                 
             }
             else
